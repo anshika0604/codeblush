@@ -1,4 +1,5 @@
 import Image from "next/image"
+import { Card } from "../ui/card"
 
 interface Props {
   title: string
@@ -14,7 +15,7 @@ export function BlogCard({
   readTime
 }: Props) {
   return (
-    <article className="group overflow-hidden rounded-3xl border bg-white">
+    <Card className="group overflow-hidden rounded-3xl border bg-white">
 
       <div className="overflow-hidden">
         <Image
@@ -26,7 +27,7 @@ export function BlogCard({
         />
       </div>
 
-      <div className="p-6">
+      <Card className="p-6">
         <span className="text-sm text-[#D99CA4]">
           {category}
         </span>
@@ -38,8 +39,8 @@ export function BlogCard({
         <p className="mt-4 text-sm text-[#6B625D]">
           {readTime}
         </p>
-      </div>
+      </Card>
 
-    </article>
+    </Card>
   )
 }
