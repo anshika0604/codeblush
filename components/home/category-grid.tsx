@@ -1,32 +1,92 @@
-import { categories } from "@/data/categories"
+import { categories } from "@/data/categories";
+import { ArrowRight } from "lucide-react";
 
 export function CategoryGrid() {
   return (
-    <section className="py-24 bg-[#FFFDFC]">
-      <div className="max-w-7xl mx-auto px-6">
+    <section className="relative overflow-hidden bg-[#FFFDFC] py-32">
 
-        <h2 className="text-center text-5xl mb-16">
-          Explore Categories
-        </h2>
+      {/* Background decoration */}
+      <div className="absolute left-0 top-20 h-64 w-64 rounded-full bg-[#E8B4B8]/10 blur-3xl" />
+      <div className="absolute right-0 bottom-20 h-72 w-72 rounded-full bg-[#BFC9BE]/10 blur-3xl" />
 
-        <div className="grid md:grid-cols-2 gap-8">
+      <div className="relative mx-auto max-w-7xl px-6">
 
-          {categories.map(category => (
+        {/* Section Header */}
+        <div className="text-center">
+
+          <p className="font-script text-4xl text-[#D99CA4]">
+            Discover Your Path
+          </p>
+
+          <h2 className="mt-4 font-playfair text-4xl text-[#2E2A27] md:text-5xl lg:text-6xl">
+            Explore Categories
+          </h2>
+
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[#6B625D]">
+            From cozy coding inspiration to career growth,
+            discover beautifully curated content designed
+            for women building careers in tech.
+          </p>
+
+        </div>
+
+        {/* Cards */}
+        <div className="mt-20 grid gap-8 md:grid-cols-2">
+
+          {categories.map((category) => (
             <div
               key={category.title}
-              className="rounded-3xl border bg-white p-8 hover:-translate-y-1 transition"
+              className="
+                group
+                relative
+                overflow-hidden
+                rounded-[32px]
+                border
+                border-[#EFE7E1]
+                bg-white
+                p-10
+                transition-all
+                duration-500
+                hover:-translate-y-2
+                hover:border-[#E8B4B8]
+                hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
+              "
             >
-              <div className="text-4xl">
+
+              {/* Hover Glow */}
+              <div className="absolute inset-0 opacity-0 transition-opacity duration-500 group-hover:opacity-100">
+                <div className="absolute -right-20 -top-20 h-48 w-48 rounded-full bg-[#E8B4B8]/10 blur-3xl" />
+              </div>
+
+              {/* Top Accent */}
+              <div className="mb-8 h-1 w-16 rounded-full bg-[#D99CA4]" />
+
+              {/* Icon */}
+              <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FAF6F2] text-4xl shadow-sm">
                 {category.icon}
               </div>
 
-              <h3 className="mt-4 text-2xl">
+              {/* Content */}
+              <h3 className="mt-8 font-playfair text-3xl text-[#2E2A27]">
                 {category.title}
               </h3>
 
-              <p className="mt-3 text-[#6B625D]">
+              <p className="mt-4 leading-relaxed text-[#6B625D]">
                 {category.description}
               </p>
+
+              {/* CTA */}
+              <div className="mt-8 flex items-center gap-2 text-sm font-medium text-[#D99CA4]">
+
+                Explore
+
+                <ArrowRight
+                  size={16}
+                  className="transition-transform duration-300 group-hover:translate-x-1"
+                />
+
+              </div>
+
             </div>
           ))}
 
@@ -34,5 +94,5 @@ export function CategoryGrid() {
 
       </div>
     </section>
-  )
+  );
 }

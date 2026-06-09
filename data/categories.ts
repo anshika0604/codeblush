@@ -1,22 +1,26 @@
 export const categories = [
-    {
-      icon: "🌸",
-      title: "Romanticizing Coding Life",
-      description: "Making software engineering feel intentional and beautiful."
-    },
-    {
-      icon: "💻",
-      title: "Coding Gems",
-      description: "Tools, tips and discoveries for developers."
-    },
-    {
-      icon: "☕",
-      title: "Cozy Coding Spaces",
-      description: "Workspace inspiration and desk aesthetics."
-    },
-    {
-      icon: "📈",
-      title: "Career Growth",
-      description: "Level up your career in tech."
-    }
-  ]
+  {
+    icon: "🌸",
+    title: "Romanticizing Coding Life",
+    description:
+      "Transform your daily coding routine into a beautiful and intentional lifestyle."
+  },
+  {
+    icon: "💻",
+    title: "Coding Gems",
+    description:
+      "Discover developer tools, hidden resources, and productivity boosters."
+  },
+  {
+    icon: "☕",
+    title: "Cozy Coding Spaces",
+    description:
+      "Workspace inspiration, desk setups, and aesthetics designed for focus."
+  },
+  {
+    icon: "📈",
+    title: "Career Growth",
+    description:
+      "Level up your technical skills, confidence, and career in tech."
+  }
+];

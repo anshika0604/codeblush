@@ -1,14 +1,20 @@
 "use client";
 
 import Link from "next/link";
-import { Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Container } from "@/components/ui/container";
 
-import { Logo } from "@/components/shared/logo";
-import { navigation } from "@/constants/navigation";
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Categories", href: "/categories" },
+  { name: "Resources", href: "/resources" },
+  { name: "About", href: "/about" },
+  { name: "Contact", href: "/contact" },
+];
 
 export function Navbar() {
-  const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
@@ -18,51 +24,78 @@ export function Navbar() {
 
     window.addEventListener("scroll", handleScroll);
 
-    return () =>
-      window.removeEventListener(
-        "scroll",
-        handleScroll
-      );
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
   }, []);
 
   return (
     <header
-      className={`fixed top-0 z-50 w-full transition-all duration-500 ${
+      className={`fixed inset-x-0 top-0 z-50 transition-all duration-700 ease-out ${
         scrolled
-          ? "border-b border-[#EFE7E1] bg-[#FAF6F2]/90 backdrop-blur-lg shadow-sm"
+          ? "border-b border-[#EFE7E1] bg-[#FAF6F2]/80 backdrop-blur-xl shadow-[0_10px_40px_rgba(0,0,0,0.04)]"
           : "bg-transparent"
       }`}
     >
-      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-6 lg:px-8">
+      <Container>
+        <div className="flex h-24 items-center justify-between">
 
-        <Logo />
+          {/* Logo */}
+          <Link href="/" className="group">
+            <h2 className="font-playfair text-4xl text-[#2E2A27] transition">
+              CodeBlush
+            </h2>
 
-        <nav className="hidden md:flex items-center gap-10">
-          {navigation.map((item) => (
-            <Link
-              key={item.title}
-              href={item.href}
-              className="text-sm font-medium transition hover:text-[#D99CA4]"
-            >
-              {item.title}
-            </Link>
-          ))}
-        </nav>
+            <p className="text-sm text-[#D99CA4]">
+              romanticizing coding life
+            </p>
+          </Link>
 
-        <button
-          className="hidden md:block rounded-full bg-[#E8B4B8] px-6 py-3 text-white transition hover:bg-[#D99CA4]"
-        >
-          Join Club
-        </button>
+          {/* Navigation */}
+          <nav className="hidden items-center gap-10 lg:flex">
+            {navigation.map((item) => (
+              <Link
+                key={item.name}
+                href={item.href}
+                className="group
+                    relative
+                    text-lg 
+                    font-medium
+                    text-[#2E2A27]
+                    transition
+                    hover:text-[#D99CA4]"
+              >
+                {item.name}
+                <span
+                    className="
+                    absolute
+                    -bottom-2
+                    left-0
+                    h-[1px]
+                    w-0
+                    bg-[#D99CA4]
+                    transition-all
+                    duration-300
+                    group-hover:w-full
+                    "
+                />
+              </Link>
+            ))}
+          </nav>
 
-        <button
-          onClick={() => setOpen(!open)}
-          className="md:hidden"
-        >
-          {open ? <X /> : <Menu />}
-        </button>
-
-      </div>
+          {/* CTA */}
+          <Button
+            className="
+              rounded-full
+              bg-[#E8B4B8]
+              px-8
+              hover:bg-[#D99CA4]
+            "
+          >
+            Join Club
+          </Button>
+        </div>
+      </Container>
     </header>
   );
 }

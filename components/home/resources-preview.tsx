@@ -1,36 +1,131 @@
-import { resources } from "@/data/resources"
+import { resources } from "@/data/resources";
+import { ArrowRight } from "lucide-react";
 
-export function ResourcesPreview() {
+export function ResourcesBento() {
   return (
-    <section className="py-24">
+    <section className="py-32">
 
-      <div className="max-w-7xl mx-auto px-6">
+      <div className="mx-auto max-w-7xl px-6">
 
-        <h2 className="text-center text-5xl mb-16">
-          Coding Gems
-        </h2>
+        {/* Section Header */}
+        <div className="text-center">
 
-        <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <p className="font-script text-4xl text-[#D99CA4]">
+            Coding Gems
+          </p>
 
-          {resources.map(resource => (
-            <div
-              key={resource.title}
-              className="rounded-3xl border bg-white p-6"
-            >
-              <h3 className="text-xl font-semibold">
-                {resource.title}
-              </h3>
+          <h2 className="mt-4 font-playfair text-5xl text-[#2E2A27]">
+            Popular Resources
+          </h2>
 
-              <p className="mt-3 text-[#6B625D]">
-                {resource.description}
-              </p>
+          <p className="mx-auto mt-6 max-w-2xl text-lg text-[#6B625D]">
+            Discover tools, extensions, learning materials,
+            and productivity systems designed to help you
+            grow beautifully in tech.
+          </p>
+
+        </div>
+
+        {/* Bento Grid */}
+        <div className="mt-20 grid gap-6 lg:grid-cols-3">
+
+          {/* Large Featured Card */}
+          <div
+            className="
+              group
+              lg:col-span-2
+              rounded-[36px]
+              border
+              border-[#EFE7E1]
+              bg-white
+              p-10
+              transition-all
+              duration-500
+              hover:-translate-y-2
+              hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
+            "
+          >
+
+            <div className="text-6xl">
+              {resources[0].icon}
             </div>
-          ))}
+
+            <h3 className="mt-8 font-playfair text-4xl text-[#2E2A27]">
+              {resources[0].title}
+            </h3>
+
+            <p className="mt-4 max-w-lg text-[#6B625D]">
+              {resources[0].description}
+            </p>
+
+            <div className="mt-8 flex items-center gap-2 text-[#D99CA4]">
+
+              Explore
+
+              <ArrowRight
+                size={18}
+                className="transition-transform duration-300 group-hover:translate-x-1"
+              />
+
+            </div>
+
+          </div>
+
+          {/* AI Tools */}
+          <div className="rounded-[36px] border border-[#EFE7E1] bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg">
+
+            <div className="text-5xl">
+              {resources[1].icon}
+            </div>
+
+            <h3 className="mt-6 font-playfair text-3xl">
+              {resources[1].title}
+            </h3>
+
+            <p className="mt-3 text-[#6B625D]">
+              {resources[1].description}
+            </p>
+
+          </div>
+
+          {/* Learning */}
+          <div className="rounded-[36px] border border-[#EFE7E1] bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg">
+
+            <div className="text-5xl">
+              {resources[2].icon}
+            </div>
+
+            <h3 className="mt-6 font-playfair text-3xl">
+              {resources[2].title}
+            </h3>
+
+            <p className="mt-3 text-[#6B625D]">
+              {resources[2].description}
+            </p>
+
+          </div>
+
+          {/* Productivity */}
+          <div className="rounded-[36px] border border-[#EFE7E1] bg-white p-8 transition-all duration-500 hover:-translate-y-2 hover:shadow-lg">
+
+            <div className="text-5xl">
+              {resources[3].icon}
+            </div>
+
+            <h3 className="mt-6 font-playfair text-3xl">
+              {resources[3].title}
+            </h3>
+
+            <p className="mt-3 text-[#6B625D]">
+              {resources[3].description}
+            </p>
+
+          </div>
 
         </div>
 
       </div>
 
     </section>
-  )
+  );
 }

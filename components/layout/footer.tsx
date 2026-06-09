@@ -1,66 +1,124 @@
 import Link from "next/link";
 
+const navigation = [
+  { name: "Home", href: "/" },
+  { name: "Blog", href: "/blog" },
+  { name: "Categories", href: "/categories" },
+  { name: "Resources", href: "/resources" },
+  { name: "About", href: "/about" },
+];
+
+const resources = [
+  "Coding Gems",
+  "VS Code Extensions",
+  "AI Tools",
+  "Career Growth",
+];
+
 export function Footer() {
   return (
-    <footer className="border-t border-[#EFE7E1] bg-white">
+    <footer className="border-t border-[#EFE7E1] bg-[#FFFDFC]">
 
       <div className="mx-auto max-w-7xl px-6 py-20">
 
-        <div className="grid gap-12 md:grid-cols-4">
+        <div className="grid gap-12 lg:grid-cols-4">
 
-          <div>
-            <h3 className="font-playfair text-3xl">
+          {/* Brand */}
+          <div className="lg:col-span-2">
+
+            <h2 className="font-playfair text-4xl text-[#2E2A27]">
               CodeBlush
+            </h2>
+
+            <p className="mt-2 font-script text-2xl text-[#D99CA4]">
+              romanticizing coding life
+            </p>
+
+            <p className="mt-6 max-w-md leading-relaxed text-[#6B625D]">
+              Helping women build beautiful careers in tech
+              through coding inspiration, productivity,
+              developer growth, and cozy workspaces.
+            </p>
+
+          </div>
+
+          {/* Navigation */}
+          <div>
+
+            <h3 className="font-medium text-[#2E2A27]">
+              Explore
             </h3>
 
-            <p className="mt-4 text-[#6B625D]">
-              Helping women build beautiful careers
-              in tech.
-            </p>
+            <ul className="mt-6 space-y-3">
+
+              {navigation.map((item) => (
+                <li key={item.name}>
+                  <Link
+                    href={item.href}
+                    className="text-[#6B625D] transition hover:text-[#D99CA4]"
+                  >
+                    {item.name}
+                  </Link>
+                </li>
+              ))}
+
+            </ul>
+
           </div>
 
+          {/* Resources */}
           <div>
-            <h4 className="font-semibold">
-              Explore
-            </h4>
 
-            <div className="mt-4 space-y-3">
-              <Link href="/blog">Blog</Link>
-              <br />
-              <Link href="/resources">Resources</Link>
-              <br />
-              <Link href="/about">About</Link>
-            </div>
-          </div>
+            <h3 className="font-medium text-[#2E2A27]">
+              Resources
+            </h3>
 
-          <div>
-            <h4 className="font-semibold">
-              Categories
-            </h4>
+            <ul className="mt-6 space-y-3">
 
-            <div className="mt-4 space-y-3">
-              <p>Career Growth</p>
-              <p>Coding Gems</p>
-              <p>Cozy Coding Spaces</p>
-            </div>
-          </div>
+              {resources.map((item) => (
+                <li
+                  key={item}
+                  className="text-[#6B625D]"
+                >
+                  {item}
+                </li>
+              ))}
 
-          <div>
-            <h4 className="font-semibold">
-              Connect
-            </h4>
+            </ul>
 
-            <div className="mt-4 space-y-3">
-              <p>Pinterest</p>
-              <p>Instagram</p>
-              <p>Email</p>
-            </div>
           </div>
 
         </div>
 
-        <div className="mt-16 border-t pt-8 text-sm text-[#6B625D]">
-          © 2026 CodeBlush
+        {/* Bottom Bar */}
+
+        <div className="mt-16 border-t border-[#EFE7E1] pt-8">
+
+          <div className="flex flex-col items-center justify-between gap-4 text-center md:flex-row">
+
+            <p className="text-sm text-[#6B625D]">
+              © {new Date().getFullYear()} CodeBlush.
+              All rights reserved.
+            </p>
+
+            <div className="flex gap-6 text-sm text-[#6B625D]">
+
+              <Link href="/privacy">
+                Privacy
+              </Link>
+
+              <Link href="/terms">
+                Terms
+              </Link>
+
+              <Link href="/contact">
+                Contact
+              </Link>
+
+            </div>
+
+          </div>
+
         </div>
 
       </div>

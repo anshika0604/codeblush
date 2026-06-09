@@ -7,7 +7,7 @@ import { FadeUp } from "@/components/shared/fade-up";
 
 export function Hero() {
   return (
-    <section className="relative flex min-h-screen items-center overflow-hidden">
+    <section className="relative flex min-h-screen items-center overflow-hidden mt-4">
 
       {/* Background Glow Effects */}
       <div className="absolute left-20 top-20 h-72 w-72 rounded-full bg-[#E8B4B8]/20 blur-[120px]" />
