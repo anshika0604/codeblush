@@ -1,16 +1,24 @@
+import { Hero } from "@/components/home/hero"
+import { FeaturedArticles } from "@/components/home/featured-articles"
+import { CategoryGrid } from "@/components/home/category-grid"
+import { QuoteBanner } from "@/components/home/quote-banner"
+import { ResourcesPreview } from "@/components/home/resources-preview"
+import { NewsletterSection } from "@/components/home/newsletter-section"
+
 export default function HomePage() {
-    return (
-      <section className="py-32">
-        <div className="text-center">
-          <h1 className="text-7xl font-serif">
-            Romanticizing Coding Life
-          </h1>
-  
-          <p className="mt-6 text-xl">
-            Helping women build beautiful
-            careers in tech.
-          </p>
-        </div>
-      </section>
-    )
-  }
+  return (
+    <>
+      <Hero />
+
+      <FeaturedArticles />
+
+      <CategoryGrid />
+
+      <QuoteBanner />
+
+      <ResourcesPreview />
+
+      <NewsletterSection />
+    </>
+  )
+}
