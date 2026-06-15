@@ -1,46 +1,81 @@
-import Image from "next/image"
-import { Card } from "../ui/card"
+import Image from "next/image";
+import Link from "next/link";
 
-interface Props {
-  title: string
-  category: string
-  image: string
-  readTime: string
+interface BlogCardProps {
+  post: {
+    slug: string;
+    title: string;
+    excerpt: string;
+    image: string;
+    category: string;
+    readTime: string;
+  };
 }
 
-export function BlogCard({
-  title,
-  category,
-  image,
-  readTime
-}: Props) {
+export function BlogCard({ post }: BlogCardProps) {
   return (
-    <Card className="group overflow-hidden rounded-3xl border bg-white">
+    <Link
+      href={`/blog/${post.slug}`}
+      className="group"
+    >
+      <article
+        className="
+          overflow-hidden
+          rounded-[32px]
+          border
+          border-[#EFE7E1]
+          bg-white
+          transition-all
+          duration-500
+          hover:-translate-y-2
+          hover:shadow-xl
+        "
+      >
+        <div className="relative aspect-[2/3] overflow-hidden">
 
-      <div className="overflow-hidden">
-        <Image
-          src={image}
-          alt={title}
-          width={600}
-          height={400}
-          className="transition duration-500 group-hover:scale-105"
-        />
-      </div>
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="
+              object-cover
+              transition
+              duration-700
+              group-hover:scale-105
+            "
+          />
 
-      <Card className="p-6">
-        <span className="text-sm text-[#D99CA4]">
-          {category}
-        </span>
+        </div>
 
-        <h3 className="mt-3 text-xl font-semibold">
-          {title}
-        </h3>
+        <div className="p-8">
 
-        <p className="mt-4 text-sm text-[#6B625D]">
-          {readTime}
-        </p>
-      </Card>
+          <span
+            className="
+              rounded-full
+              bg-[#FAF6F2]
+              px-4
+              py-1
+              text-xs
+              text-[#D99CA4]
+            "
+          >
+            {post.category}
+          </span>
 
-    </Card>
-  )
+          <h3 className="mt-6 font-playfair text-3xl">
+            {post.title}
+          </h3>
+
+          <p className="mt-4 text-[#6B625D]">
+            {post.excerpt}
+          </p>
+
+          <p className="mt-6 text-sm text-[#6B625D]">
+            {post.readTime}
+          </p>
+
+        </div>
+      </article>
+    </Link>
+  );
 }

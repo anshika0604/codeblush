@@ -1,0 +1,94 @@
+export const posts = [
+    {
+        slug: "romanticizing-coding-routine",
+
+        title: "How I Romanticized My Coding Routine",
+    
+        excerpt:
+          "Small rituals, intentional habits, and cozy systems that transformed my coding journey.",
+    
+        image: "/images/romanticizing_image.png",
+    
+        category: "Romanticizing Coding Life",
+    
+        author: "CodeBlush",
+    
+        readTime: "5 min read",
+    
+        publishedAt: "June 15, 2026",
+    
+        featured: true,
+    
+        content: `
+    # Why I Changed My Approach
+    
+    For years I treated coding like a checklist.
+    
+    Open laptop.
+    
+    Write code.
+    
+    Close laptop.
+    
+    But eventually I realized that the environment around my work mattered.
+    
+    # Small Rituals
+    
+    Lighting candles.
+    
+    Making coffee.
+    
+    Keeping a clean workspace.
+    
+    These habits changed everything.
+    
+    # Romanticizing The Journey
+    
+    The goal isn't perfection.
+    
+    The goal is consistency.
+    `,
+      },
+  
+    {
+      slug: "best-vscode-extensions",
+  
+      title: "10 VS Code Extensions Every Backend Engineer Needs",
+  
+      excerpt:
+        "The extensions that save hours every week and make development more enjoyable.",
+  
+      category: "Coding Gems",
+  
+      image: "/images/vs_extension.png",
+  
+      readTime: "8 min read",
+  
+      author: "CodeBlush",
+  
+      publishedAt: "June 2026",
+  
+      featured: false,
+    },
+  
+    {
+      slug: "cozy-coding-space",
+  
+      title: "Creating a Cozy Workspace for Deep Work",
+  
+      excerpt:
+        "Design a workspace that inspires focus, creativity, and productivity.",
+  
+      category: "Cozy Coding Spaces",
+  
+      image: "/images/article-3.jpg",
+  
+      readTime: "6 min read",
+  
+      author: "CodeBlush",
+  
+      publishedAt: "June 2026",
+  
+      featured: false,
+    },
+  ];

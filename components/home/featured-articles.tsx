@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
-import { articles } from "@/data/articles";
+import { posts } from "@/data/posts";
 
 export function FeaturedArticles() {
   return (
@@ -37,10 +37,10 @@ export function FeaturedArticles() {
         {/* Articles Grid */}
         <div className="mt-20 grid gap-10 lg:grid-cols-3">
 
-          {articles.map((article) => (
+          {posts.map((posts) => (
             <Link
-              href={`/blog/${article.id}`}
-              key={article.id}
+              href={`/blog/${posts.slug}`}
+              key={posts.slug}
               className="group"
             >
 
@@ -60,11 +60,11 @@ export function FeaturedArticles() {
               >
 
                 {/* Image */}
-                <div className="relative h-[320px] overflow-hidden">
+                <div className="relative aspect-[2/3] overflow-hidden">
 
                   <Image
-                    src={article.image}
-                    alt={article.title}
+                    src={posts.image}
+                    alt={posts.title}
                     fill
                     className="
                       object-cover
@@ -92,11 +92,11 @@ export function FeaturedArticles() {
                         text-[#D99CA4]
                       "
                     >
-                      {article.category}
+                      {posts.category}
                     </span>
 
                     <span className="text-sm text-[#6B625D]">
-                      {article.readTime}
+                      {posts.readTime}
                     </span>
 
                   </div>
@@ -110,11 +110,11 @@ export function FeaturedArticles() {
                       text-[#2E2A27]
                     "
                   >
-                    {article.title}
+                    {posts.title}
                   </h3>
 
                   <p className="mt-4 leading-relaxed text-[#6B625D]">
-                    {article.description}
+                    {posts.excerpt}
                   </p>
 
                   <div
