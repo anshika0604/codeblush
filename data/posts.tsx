@@ -51,7 +51,7 @@ export const posts = [
   
       category: "Cozy Coding Spaces",
   
-      image: "/images/article-3.jpg",
+      image: "/images/cozy_workspace.png",
   
       readTime: "6 min read",
   
