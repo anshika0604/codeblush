@@ -1,18 +1,21 @@
 import { notFound } from "next/navigation";
 
 import { posts } from "@/data/posts";
+import { getPostContent } from "@/lib/posts";
 
 import { ArticleHero } from "@/components/blog/article-hero";
-
 import { ArticleContent } from "@/components/blog/article-content";
 
-import { ArticleNewsletter } from "@/components/blog/article-newsletter";
+interface Props {
+  params: Promise<{
+    slug: string;
+  }>;
+}
 
 export default async function BlogPostPage({
   params,
-}: {
-  params: Promise<{ slug: string }>;
-}) {
+}: Props) {
+
   const { slug } = await params;
 
   const post = posts.find(
@@ -23,17 +26,17 @@ export default async function BlogPostPage({
     notFound();
   }
 
-  return (
-    <main>
+  const content = getPostContent(slug);
 
+  return (
+    <>
       <ArticleHero post={post} />
 
       <ArticleContent
-        content={post.content || ""}
+        content={content}
+        image={post.image}
+        title={post.title}
       />
-
-      <ArticleNewsletter />
-
-    </main>
+    </>
   );
 }

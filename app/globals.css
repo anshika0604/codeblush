@@ -40,3 +40,40 @@ h4 {
 .script {
   font-family: var(--font-script);
 }
+
+.prose h2 {
+  position: relative;
+  border-top: 1px solid #EFE7E1;
+  padding-top: 50px;
+  font-size: larger;
+  font-style: italic;
+}
+
+.prose h2::after {
+  content: "";
+  display: block;
+  width: 80px;
+  height: 3px;
+  background: #D99CA4;
+  margin-top: 12px;
+  border-radius: 999px;
+}
+.prose blockquote {
+  font-family: "Playfair Display", serif;
+  font-size: 1.5rem;
+  line-height: 1.6;
+}
+.article-content p:first-of-type::first-letter {
+  float: left;
+  font-size: 5rem;
+  line-height: 1.8;
+  padding-right: 10px;
+  font-family: "Playfair Display", serif;
+  color: #D99CA4;
+}
+.prose strong {
+  background: linear-gradient(
+    transparent 70%,
+    rgba(217,156,164,.25) 70%
+  );
+}

@@ -18,36 +18,6 @@ export const posts = [
         publishedAt: "June 15, 2026",
     
         featured: true,
-    
-        content: `
-    # Why I Changed My Approach
-    
-    For years I treated coding like a checklist.
-    
-    Open laptop.
-    
-    Write code.
-    
-    Close laptop.
-    
-    But eventually I realized that the environment around my work mattered.
-    
-    # Small Rituals
-    
-    Lighting candles.
-    
-    Making coffee.
-    
-    Keeping a clean workspace.
-    
-    These habits changed everything.
-    
-    # Romanticizing The Journey
-    
-    The goal isn't perfection.
-    
-    The goal is consistency.
-    `,
       },
   
     {
