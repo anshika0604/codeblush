@@ -3,6 +3,7 @@ import Link from "next/link";
 import { ArrowRight } from "lucide-react";
 
 import { posts } from "@/data/posts";
+import { getPostContent } from "@/lib/posts";
 
 export function FeaturedArticles() {
   return (
@@ -35,121 +36,124 @@ export function FeaturedArticles() {
         </div>
 
         {/* Articles Grid */}
-        <div className="mt-20 grid gap-10 lg:grid-cols-3">
+        {/* Articles Grid */}
+<div className="mt-20 grid gap-10 lg:grid-cols-3">
 
-          {posts.map((posts) => (
-            <Link
-              href={`/blog/${posts.slug}`}
-              key={posts.slug}
-              className="group"
-            >
+{posts.map((post) => {
+  const { readTime } = getPostContent(post.slug);
 
-              <article
-                className="
-                  overflow-hidden
-                  rounded-[32px]
-                  border
-                  border-[#EFE7E1]
-                  bg-white
-                  transition-all
-                  duration-500
-                  hover:-translate-y-2
-                  hover:border-[#E8B4B8]
-                  hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
-                "
-              >
+  return (
+    <Link
+      href={`/blog/${post.slug}`}
+      key={post.slug}
+      className="group"
+    >
+      <article
+        className="
+          overflow-hidden
+          rounded-[32px]
+          border
+          border-[#EFE7E1]
+          bg-white
+          transition-all
+          duration-500
+          hover:-translate-y-2
+          hover:border-[#E8B4B8]
+          hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
+        "
+      >
 
-                {/* Image */}
-                <div className="relative aspect-[2/3] overflow-hidden">
+        {/* Image */}
+        <div className="relative aspect-[2/3] overflow-hidden">
 
-                  <Image
-                    src={posts.image}
-                    alt={posts.title}
-                    fill
-                    className="
-                      object-cover
-                      transition
-                      duration-700
-                      group-hover:scale-105
-                    "
-                  />
-
-                </div>
-
-                {/* Content */}
-                <div className="p-8">
-
-                  <div className="flex items-center justify-between">
-
-                    <span
-                      className="
-                        rounded-full
-                        bg-[#FAF6F2]
-                        px-4
-                        py-1
-                        text-xs
-                        font-medium
-                        text-[#D99CA4]
-                      "
-                    >
-                      {posts.category}
-                    </span>
-
-                    <span className="text-sm text-[#6B625D]">
-                      {posts.readTime}
-                    </span>
-
-                  </div>
-
-                  <h3
-                    className="
-                      mt-6
-                      font-playfair
-                      text-3xl
-                      leading-tight
-                      text-[#2E2A27]
-                    "
-                  >
-                    {posts.title}
-                  </h3>
-
-                  <p className="mt-4 leading-relaxed text-[#6B625D]">
-                    {posts.excerpt}
-                  </p>
-
-                  <div
-                    className="
-                      mt-8
-                      flex
-                      items-center
-                      gap-2
-                      text-sm
-                      font-medium
-                      text-[#D99CA4]
-                    "
-                  >
-                    Read Article
-
-                    <ArrowRight
-                      size={16}
-                      className="
-                        transition-transform
-                        duration-300
-                        group-hover:translate-x-1
-                      "
-                    />
-
-                  </div>
-
-                </div>
-
-              </article>
-
-            </Link>
-          ))}
+          <Image
+            src={post.image}
+            alt={post.title}
+            fill
+            className="
+              object-cover
+              transition
+              duration-700
+              group-hover:scale-105
+            "
+          />
 
         </div>
 
+        {/* Content */}
+        <div className="p-8">
+
+          <div className="flex items-center justify-between">
+
+            <span
+              className="
+                rounded-full
+                bg-[#FAF6F2]
+                px-4
+                py-1
+                text-xs
+                font-medium
+                text-[#D99CA4]
+              "
+            >
+              {post.category}
+            </span>
+
+            <span className="text-sm text-[#6B625D]">
+              {readTime}
+            </span>
+
+          </div>
+
+          <h3
+            className="
+              mt-6
+              font-playfair
+              text-3xl
+              leading-tight
+              text-[#2E2A27]
+            "
+          >
+            {post.title}
+          </h3>
+
+          <p className="mt-4 leading-relaxed text-[#6B625D]">
+            {post.excerpt}
+          </p>
+
+          <div
+            className="
+              mt-8
+              flex
+              items-center
+              gap-2
+              text-sm
+              font-medium
+              text-[#D99CA4]
+            "
+          >
+            Read Article
+
+            <ArrowRight
+              size={16}
+              className="
+                transition-transform
+                duration-300
+                group-hover:translate-x-1
+              "
+            />
+
+          </div>
+
+        </div>
+
+      </article>
+
+    </Link>
+  );
+})}
+
+</div>
       </div>
     </section>
   );

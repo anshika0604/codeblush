@@ -1,5 +1,6 @@
 import { posts } from "@/data/posts";
 import { BlogCard } from "@/components/blog/blog-card";
+import { getPostContent } from "@/lib/posts";
 
 export default function BlogPage() {
   return (
@@ -21,12 +22,19 @@ export default function BlogPage() {
 
         <div className="mt-20 grid gap-10 lg:grid-cols-3">
 
-          {posts.map((post) => (
-            <BlogCard
-              key={post.slug}
-              post={post}
-            />
-          ))}
+        {posts.map((post) => {
+  const { readTime } = getPostContent(post.slug);
+
+  return (
+    <BlogCard
+      key={post.slug}
+      post={{
+        ...post,
+        readTime,
+      }}
+    />
+  );
+})}
 
         </div>
 

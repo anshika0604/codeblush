@@ -8,7 +8,7 @@ interface BlogCardProps {
     excerpt: string;
     image: string;
     category: string;
-    readTime: string;
+    readTime?: string;
   };
 }
 
@@ -18,6 +18,9 @@ export function BlogCard({ post }: BlogCardProps) {
       href={`/blog/${post.slug}`}
       className="group"
     >
+      {post.readTime && (
+  <p>{post.readTime}</p>
+)}
       <article
         className="
           overflow-hidden
