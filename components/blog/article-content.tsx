@@ -89,7 +89,8 @@ export function ArticleContent({
 <ReactMarkdown>
     {content}
   </ReactMarkdown>
-<div className="mt-24 text-center">
+      </article>
+      <div className="mt-16 text-center">
   <div className="mx-auto h-px w-32 bg-[#E8B4B8]" />
 
   <p className="px-2 mt-10 font-playfair text-3xl text-[#2E2A27]">
@@ -101,7 +102,6 @@ export function ArticleContent({
     cozy coding inspiration.
   </p>
 </div>
-      </article>
     </section>
   );
 }

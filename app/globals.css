@@ -77,3 +77,6 @@ h4 {
     rgba(217,156,164,.25) 70%
   );
 }
+html {
+  scroll-behavior: smooth;
+}

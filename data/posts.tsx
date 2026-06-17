@@ -13,8 +13,6 @@ export const posts = [
     
         author: "CodeBlush",
     
-        readTime: "5 min read",
-    
         publishedAt: "June 15, 2026",
     
         featured: true,
@@ -31,8 +29,6 @@ export const posts = [
       category: "Coding Gems",
   
       image: "/images/vs_extension.png",
-  
-      readTime: "8 min read",
   
       author: "CodeBlush",
   
@@ -52,8 +48,6 @@ export const posts = [
       category: "Cozy Coding Spaces",
   
       image: "/images/cozy_workspace.png",
-  
-      readTime: "6 min read",
   
       author: "CodeBlush",
   
