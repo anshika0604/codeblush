@@ -18,9 +18,6 @@ export function BlogCard({ post }: BlogCardProps) {
       href={`/blog/${post.slug}`}
       className="group"
     >
-      {post.readTime && (
-  <p>{post.readTime}</p>
-)}
       <article
         className="
           overflow-hidden
@@ -73,7 +70,11 @@ export function BlogCard({ post }: BlogCardProps) {
             {post.excerpt}
           </p>
 
-          <p className="mt-6 text-sm text-[#6B625D]">
+          <p className="mt-6
+    text-sm
+    uppercase
+    tracking-wider
+    text-[#D99CA4]">
             {post.readTime}
           </p>
 

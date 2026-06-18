@@ -55,4 +55,22 @@ export const posts = [
   
       featured: false,
     },
+    {
+      slug: "romanticizing-coding-life-isnt-silly",
+
+        title: "Romanticizing Coding Life Isn’t Silly — It’s Why I Stayed Consistent ☕✨",
+    
+        excerpt:
+          "Coffee, planning, deep work, and small daily wins—the cozy rituals that helped me fall in love with coding again.",
+    
+        image: "/images/pin_isnt_silly.png",
+    
+        category: "Romanticizing Coding Life",
+    
+        author: "CodeBlush",
+    
+        publishedAt: "June 15, 2026",
+    
+        featured: true,
+    },
   ];
