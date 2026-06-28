@@ -63,7 +63,7 @@ export function CategoryGrid() {
 
               {/* Icon */}
               <div className="flex h-16 w-16 items-center justify-center rounded-2xl bg-[#FAF6F2] text-4xl shadow-sm">
-                {category.icon}
+                {category.emoji}
               </div>
 
               {/* Content */}
