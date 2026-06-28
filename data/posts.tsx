@@ -10,6 +10,8 @@ export const posts = [
         image: "/images/romanticizing_image.png",
     
         category: "Romanticizing Coding Life",
+
+        categorySlug: "cozy-coding",
     
         author: "CodeBlush",
     
@@ -27,6 +29,8 @@ export const posts = [
         "The extensions that save hours every week and make development more enjoyable.",
   
       category: "Coding Gems",
+      
+      categorySlug: "resources",
   
       image: "/images/vs_extension.png",
   
@@ -46,7 +50,9 @@ export const posts = [
         "Design a workspace that inspires focus, creativity, and productivity.",
   
       category: "Cozy Coding Spaces",
-  
+
+      categorySlug: "cozy-coding",
+
       image: "/images/cozy_workspace.png",
   
       author: "CodeBlush",
@@ -66,6 +72,8 @@ export const posts = [
         image: "/images/pin_isnt_silly.png",
     
         category: "Romanticizing Coding Life",
+
+        categorySlug: "cozy-coding",
     
         author: "CodeBlush",
     
