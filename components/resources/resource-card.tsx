@@ -14,10 +14,10 @@ export function ResourceCard({ resource }: Props) {
   return (
     <Link
       href={
-        resource.comingSoon
-          ? "#"
-          : `/resources/${resource.slug}`
-      }
+  resource.slug === "wallpapers"
+    ? "/resources/wallpapers"
+    : "#"
+}
       className="group"
     >
       <article
