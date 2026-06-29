@@ -81,4 +81,64 @@ export const posts = [
     
         featured: true,
     },
+    {
+      slug: "stopped-chasing-new-technologies",
+
+        title: "I Stopped Chasing Every New Technology—Here's What Actually Grew My Career",
+    
+        excerpt:
+          "For years, I thought becoming a better software engineer meant learning every new framework. It turns out the biggest breakthroughs came from slowing down, mastering the fundamentals, and trusting consistent growth.",
+    
+        image: "/images/stopped_chasing.png",
+    
+        category: "Developer Life",
+
+        categorySlug: "developer-life",
+    
+        author: "CodeBlush",
+    
+        publishedAt: "June 29, 2026",
+    
+        featured: false,
+    },
+    {
+      slug: "better-backend-enginner",
+
+        title: "7 Habits That Quietly Made Me a Better Backend Engineer",
+    
+        excerpt:
+          "Small daily habits that compound into stronger technical skills and greater confidence.",
+    
+        image: "/images/better_backend.png",
+    
+        category: "Developer Life",
+
+        categorySlug: "developer-life",
+    
+        author: "CodeBlush",
+    
+        publishedAt: "June 29, 2026",
+    
+        featured: false,
+    },
+    {
+      slug: "debugging-mindset",
+
+        title: "The Debugging Mindset That Changed Everything",
+    
+        excerpt:
+          "How I stopped randomly changing code and learned to think like an experienced engineer.",
+    
+        image: "/images/debugging-mindset.png",
+    
+        category: "Developer Life",
+
+        categorySlug: "developer-life",
+    
+        author: "CodeBlush",
+    
+        publishedAt: "June 29, 2026",
+    
+        featured: false,
+    }
   ];
