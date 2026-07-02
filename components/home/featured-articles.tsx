@@ -36,123 +36,151 @@ export function FeaturedArticles() {
         </div>
 
         {/* Articles Grid */}
-        {/* Articles Grid */}
-<div className="mt-20 grid gap-10 lg:grid-cols-3">
+<div className="mt-16 grid gap-10 lg:grid-cols-3">
 
-{posts.map((post) => {
-  const { readTime } = getPostContent(post.slug);
+  {posts.slice(0, 6).map((post) => {
+    const { readTime } = getPostContent(post.slug);
 
-  return (
-    <Link
-      href={`/blog/${post.slug}`}
-      key={post.slug}
-      className="group"
-    >
-      <article
-        className="
-          overflow-hidden
-          rounded-[32px]
-          border
-          border-[#EFE7E1]
-          bg-white
-          transition-all
-          duration-500
-          hover:-translate-y-2
-          hover:border-[#E8B4B8]
-          hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
-        "
+    return (
+      <Link
+        href={`/blog/${post.slug}`}
+        key={post.slug}
+        className="group"
       >
-
-        {/* Image */}
-        <div className="relative aspect-[2/3] overflow-hidden">
-
-          <Image
-            src={post.image}
-            alt={post.title}
-            fill
-            className="
-              object-cover
-              transition
-              duration-700
-              group-hover:scale-105
-            "
-          />
-
-        </div>
-
-        {/* Content */}
-        <div className="p-8">
-
-          <div className="flex items-center justify-between">
-
-            <span
+        <article
+          className="
+            flex
+    h-full
+    flex-col
+    overflow-hidden
+    rounded-[32px]
+    border
+    border-[#EFE7E1]
+    bg-white
+    transition-all
+    duration-500
+    hover:-translate-y-2
+    hover:border-[#E8B4B8]
+    hover:shadow-[0_20px_60px_rgba(217,156,164,0.15)]
+          "
+        >
+          {/* Image */}
+          <div className="relative h-[320px] overflow-hidden rounded-t-[32px]">
+            <Image
+              src={post.image}
+              alt={post.title}
+              fill
               className="
-                rounded-full
-                bg-[#FAF6F2]
-                px-4
-                py-1
-                text-xs
+                object-cover
+                transition
+                duration-700
+                group-hover:scale-105
+              "
+            />
+          </div>
+
+          {/* Content */}
+          <div className="flex flex-1 flex-col p-6">
+
+            <div className="flex items-center justify-between">
+
+              <span
+                className="
+                  rounded-full
+                  bg-[#FAF6F2]
+                  px-4
+                  py-1
+                  text-xs
+                  font-medium
+                  text-[#D99CA4]
+                "
+              >
+                {post.category}
+              </span>
+
+              <span className="text-sm text-[#6B625D]">
+                {readTime}
+              </span>
+
+            </div>
+
+            <h3
+              className="
+                 mt-5
+    line-clamp-2
+    font-playfair
+    text-2xl
+    leading-snug
+    text-[#2E2A27]
+              "
+            >
+              {post.title}
+            </h3>
+
+            <p className="mt-3
+    line-clamp-3
+    text-[15px]
+    leading-7
+    text-[#6B625D]">
+              {post.excerpt}
+            </p>
+
+            <div
+              className="
+                mt-auto
+                pt-6
+                flex
+                items-center
+                gap-2
+                text-sm
                 font-medium
                 text-[#D99CA4]
               "
             >
-              {post.category}
-            </span>
+              Read Article
 
-            <span className="text-sm text-[#6B625D]">
-              {readTime}
-            </span>
+              <ArrowRight
+                size={16}
+                className="
+                  transition-transform
+                  duration-300
+                  group-hover:translate-x-1
+                "
+              />
 
-          </div>
-
-          <h3
-            className="
-              mt-6
-              font-playfair
-              text-3xl
-              leading-tight
-              text-[#2E2A27]
-            "
-          >
-            {post.title}
-          </h3>
-
-          <p className="mt-4 leading-relaxed text-[#6B625D]">
-            {post.excerpt}
-          </p>
-
-          <div
-            className="
-              mt-8
-              flex
-              items-center
-              gap-2
-              text-sm
-              font-medium
-              text-[#D99CA4]
-            "
-          >
-            Read Article
-
-            <ArrowRight
-              size={16}
-              className="
-                transition-transform
-                duration-300
-                group-hover:translate-x-1
-              "
-            />
+            </div>
 
           </div>
 
-        </div>
+        </article>
 
-      </article>
+      </Link>
+    );
+  })}
 
-    </Link>
-  );
-})}
-
+</div>
+<div className="mt-16 flex justify-center">
+  <Link
+    href="/blog"
+    className="
+      inline-flex
+      items-center
+      gap-2
+      rounded-full
+      border
+      border-[#D99CA4]
+      px-8
+      py-4
+      font-medium
+      text-[#D99CA4]
+      transition-all
+      hover:bg-[#D99CA4]
+      hover:text-white
+    "
+  >
+    View All Articles
+    <ArrowRight size={18} />
+  </Link>
 </div>
       </div>
     </section>

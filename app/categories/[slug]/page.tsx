@@ -33,7 +33,7 @@ export default async function CategoryPage({ params }: Props) {
       <section className="mx-auto max-w-5xl px-6 text-center">
 
         <p className="font-script text-5xl text-[#D99CA4]">
-          {category.emoji} {category.title}
+          {category.emoji} Explore Category
         </p>
 
         <h1

@@ -84,16 +84,21 @@ export function Navbar() {
           </nav>
 
           {/* CTA */}
-          <Button
+          <Link href="/contact"
             className="
               rounded-full
-              bg-[#E8B4B8]
-              px-8
-              hover:bg-[#D99CA4]
+    bg-[#E8B4B8]
+    px-8
+    py-3
+    text-sm
+    font-medium
+    text-white
+    transition
+    hover:bg-[#D99CA4]
             "
           >
             Join Club
-          </Button>
+          </Link>
         </div>
       </Container>
     </header>

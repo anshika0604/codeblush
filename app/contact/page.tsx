@@ -1,3 +1,6 @@
+"use client";
+
+import { useState } from "react";
 import {
   Mail,
   Github,
@@ -7,6 +10,56 @@ import {
 } from "lucide-react";
 
 export default function ContactPage() {
+  const [loading, setLoading] = useState(false);
+  const [success, setSuccess] = useState(false);
+  const [error, setError] = useState(false);
+
+  const handleSubmit = async (
+    e: React.FormEvent<HTMLFormElement>
+  ) => {
+    e.preventDefault();
+
+    setLoading(true);
+    setSuccess(false);
+    setError(false);
+
+    const form = e.currentTarget;
+    const formData = new FormData(form);
+    const payload = {
+      name: formData.get("name"),
+      email: formData.get("email"),
+      subject: formData.get("subject"),
+      message: formData.get("message"),
+    };
+
+    console.log("Contact form submit payload:", payload);
+
+    try {
+      const response = await fetch("/api/contact", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
+
+      const data = await response.json();
+      console.log("Contact API response:", response.status, data);
+
+      setLoading(false);
+
+      if (response.ok) {
+        setSuccess(true);
+        form.reset();
+      } else {
+        setError(true);
+      }
+    } catch (error) {
+      console.error("Contact submit failed:", error);
+      setLoading(false);
+      setError(true);
+    }
+  };
   return (
     <main className="bg-[#FFFDFB] pt-40 pb-28">
 
@@ -42,33 +95,39 @@ export default function ContactPage() {
             Send a Message
           </p>
 
-          <form className="mt-10 space-y-6">
+          <form onSubmit={handleSubmit} className="mt-10 space-y-6">
 
             <input
+             name="name"
               type="text"
               placeholder="Your name"
               className="w-full rounded-2xl border border-[#EFE7E1] bg-[#FFFDFB] px-5 py-4 outline-none transition focus:border-[#D99CA4]"
             />
 
             <input
+              name="email"
               type="email"
               placeholder="your@email.com"
               className="w-full rounded-2xl border border-[#EFE7E1] bg-[#FFFDFB] px-5 py-4 outline-none transition focus:border-[#D99CA4]"
             />
 
             <input
+            name="subject"
               type="text"
               placeholder="Subject"
               className="w-full rounded-2xl border border-[#EFE7E1] bg-[#FFFDFB] px-5 py-4 outline-none transition focus:border-[#D99CA4]"
             />
 
             <textarea
+            name="message"
               rows={6}
               placeholder="Tell me what's on your mind..."
               className="w-full rounded-2xl border border-[#EFE7E1] bg-[#FFFDFB] px-5 py-4 outline-none transition focus:border-[#D99CA4]"
             />
 
             <button
+            type="submit"
+            disabled={loading}
               className="
                 rounded-full
                 bg-[#D99CA4]
@@ -80,7 +139,7 @@ export default function ContactPage() {
                 hover:bg-[#C98993]
               "
             >
-              Send Message ♡
+              {loading ? "Sending..." : "Send Message ♡"}
             </button>
 
           </form>
@@ -266,6 +325,17 @@ export default function ContactPage() {
           >
             Join the Club
           </button>
+          {success && (
+            <p className="text-green-600">
+              Thank you! Your message has been sent. ♡
+            </p>
+          )}
+
+          {error && (
+            <p className="text-red-500">
+              Something went wrong. Please try again.
+            </p>
+          )}
 
         </div>
 
