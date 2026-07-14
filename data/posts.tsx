@@ -140,5 +140,25 @@ export const posts = [
         publishedAt: "June 29, 2026",
     
         featured: false,
+    },
+    {
+      slug: "desktop_in_budget",
+
+        title: "My Favorite Coding Desk Setup Under $500",
+    
+        excerpt:
+          "Build a cozy, productive coding workspace for under $500 with thoughtfully chosen Amazon finds that make every coding session more comfortable and inspiring.",
+    
+        image: "/images/desktop_in_budget.png",
+    
+        category: "Workspace Setup",
+
+        categorySlug: "workspace",
+    
+        author: "CodeBlush",
+    
+        publishedAt: "July 14, 2026",
+    
+        featured: false,
     }
   ];
