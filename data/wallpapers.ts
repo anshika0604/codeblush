@@ -30,4 +30,25 @@ export const wallpapers = [
     resolution: "3024 × 1964",
     tags: ["Coffee", "Developer"],
   },
+  {
+    slug: "aesthetic-coding",
+    title: "Aesthetic Coding",
+    image: "/wallpapers/aesthetic.png",
+    resolution: "3024 × 1964",
+    tags: ["Aesthetic", "Vibe Coding"],
+  },
+  {
+    slug: "late_night-coding",
+    title: "Late Night Coding",
+    image: "/wallpapers/late_night_vibe.png",
+    resolution: "3024 × 1964",
+    tags: ["Late Night", "Developer"],
+  },
+  {
+    slug: "rest_day",
+    title: "Rest Day",
+    image: "/wallpapers/rest_day.png",
+    resolution: "3024 × 1964",
+    tags: ["Rest", "Chill"],
+  },
 ];
