@@ -14,6 +14,7 @@ import FAQ from "@/components/affliliate/FAQ";
 
 interface Props {
   post: Post;
+  content: string;
   readTime: string;
 }
 
