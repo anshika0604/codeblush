@@ -1,4 +1,6 @@
-export const posts = [
+import { Post } from "@/types/post";
+
+export const posts : Post[] = [
     {
         slug: "romanticizing-coding-routine",
 
@@ -14,6 +16,8 @@ export const posts = [
         categorySlug: "cozy-coding",
     
         author: "CodeBlush",
+
+        type: "blog",
     
         publishedAt: "June 15, 2026",
     
@@ -35,6 +39,8 @@ export const posts = [
       image: "/images/vs_extension.png",
   
       author: "CodeBlush",
+
+      type: "blog",
   
       publishedAt: "June 2026",
   
@@ -56,6 +62,8 @@ export const posts = [
       image: "/images/cozy_workspace.png",
   
       author: "CodeBlush",
+
+      type: "blog",
   
       publishedAt: "June 2026",
   
@@ -76,6 +84,8 @@ export const posts = [
         categorySlug: "cozy-coding",
     
         author: "CodeBlush",
+
+        type: "blog",
     
         publishedAt: "June 15, 2026",
     
@@ -96,6 +106,8 @@ export const posts = [
         categorySlug: "developer-life",
     
         author: "CodeBlush",
+
+        type: "blog",
     
         publishedAt: "June 29, 2026",
     
@@ -116,6 +128,8 @@ export const posts = [
         categorySlug: "developer-life",
     
         author: "CodeBlush",
+
+        type: "blog",
     
         publishedAt: "June 29, 2026",
     
@@ -136,6 +150,8 @@ export const posts = [
         categorySlug: "developer-life",
     
         author: "CodeBlush",
+
+        type: "blog",
     
         publishedAt: "June 29, 2026",
     
@@ -156,6 +172,8 @@ export const posts = [
         categorySlug: "workspace",
     
         author: "CodeBlush",
+
+        type: "affiliate",
     
         publishedAt: "July 14, 2026",
     

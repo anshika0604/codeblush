@@ -9,6 +9,7 @@ import { ReadingProgress } from "@/components/blog/reading-progress";
 import { NewsletterCTA } from "@/components/newsletter/newsletter-cta";
 import { RelatedArticles } from "@/components/blog/related-articles";
 import { TableOfContents } from "@/components/blog/TableOfContents";
+import { AffiliateArticle } from "@/components/affliliate/AffiliateArticle";
 
 interface Props {
   params: Promise<{
@@ -34,6 +35,16 @@ export default async function BlogPostPage({
     content,
     readTime,
   } = getPostContent(post.slug);
+
+  if (post.type === "affiliate") {
+  return (
+    <AffiliateArticle
+      post={post}
+      content={content}
+      readTime={readTime}
+    />
+  );
+}
 
   return (
     <>

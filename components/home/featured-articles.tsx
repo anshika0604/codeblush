@@ -98,6 +98,22 @@ export function FeaturedArticles() {
                 {post.category}
               </span>
 
+              {post.type === "affiliate" && (
+      <span
+        className="
+          rounded-full
+          bg-[#FFF3E6]
+          px-3
+          py-1
+          text-xs
+          font-semibold
+          text-[#C98945]
+        "
+      >
+        ✨ Setup Guide
+      </span>
+    )}
+
               <span className="text-sm text-[#6B625D]">
                 {readTime}
               </span>
