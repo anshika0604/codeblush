@@ -1,7 +1,6 @@
 import { Post } from "@/types/post";
 import { posts } from "@/data/posts";
-
-import { codingDeskSetup } from "@/data/coding-desk-setup";
+import { AffiliateGuide } from "@/types/affiliate-guide";
 
 import { ProductHero } from "@/components/affliliate/ProductHero";
 import { ProductCard } from "@/components/affliliate/ProductCard";
@@ -16,12 +15,14 @@ interface Props {
   post: Post;
   content: string;
   readTime: string;
+  guide: AffiliateGuide;
 }
 
 export function AffiliateArticle({
   post,
+  guide,
 }: Props) {
-
+  
   const alternatives = posts
     .filter(
       (item) =>
@@ -31,70 +32,89 @@ export function AffiliateArticle({
     .slice(0, 3);
 
   return (
-    <main>
+    <main className="min-h-screen">
 
-      {/* Hero */}
+      {/* =====================================================
+          HERO
+      ===================================================== */}
 
       <ProductHero
-        hero={codingDeskSetup.hero}
+        hero={guide.hero}
       />
 
-      {/* Quick Picks */}
+      {/* =====================================================
+          QUICK PICKS
+      ===================================================== */}
 
       <QuickPicks
-        picks={codingDeskSetup.quickPicks}
-        products={codingDeskSetup.products}
+        picks={guide.quickPicks}
+        products={guide.products}
       />
 
-      {/* Highlights */}
+      {/* =====================================================
+          HIGHLIGHTS
+      ===================================================== */}
 
       <ProductHighlights
-        title={codingDeskSetup.highlights.title}
-        subtitle={codingDeskSetup.highlights.subtitle}
-        highlights={codingDeskSetup.highlights.items}
+        title={guide.highlights.title}
+        subtitle={guide.highlights.subtitle}
+        highlights={guide.highlights.items}
       />
 
-      {/* Comparison */}
+      {/* =====================================================
+          COMPARISON
+      ===================================================== */}
 
       <ProductComparison
-        products={codingDeskSetup.comparison}
+        products={guide.comparison}
       />
 
-      {/* Products */}
+      {/* =====================================================
+          PRODUCTS
+      ===================================================== */}
 
       <section
         id="products"
-        className="mx-auto max-w-7xl px-6 py-24"
+        className="
+          mx-auto
+          max-w-7xl
+          px-6
+          py-24
+        "
       >
 
-        {codingDeskSetup.products.map((product, index) => (
-
+        {guide.products.map((product, index) => (
           <ProductCard
             key={product.id}
             {...product}
             reverse={index % 2 === 1}
           />
-
         ))}
 
       </section>
 
-      {/* Alternatives */}
+      {/* =====================================================
+          ALTERNATIVE GUIDES
+      ===================================================== */}
 
       <ProductAlternatives
         posts={alternatives}
       />
 
-      {/* Buying Guide */}
+      {/* =====================================================
+          BUYING GUIDE
+      ===================================================== */}
 
       <BuyingGuide
-        tips={codingDeskSetup.buyingGuide}
+        tips={guide.buyingGuide}
       />
 
-      {/* FAQ */}
+      {/* =====================================================
+          FAQ
+      ===================================================== */}
 
       <FAQ
-        faqs={codingDeskSetup.faq}
+        faqs={guide.faq}
       />
 
     </main>
